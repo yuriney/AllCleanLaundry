@@ -4,7 +4,7 @@ function App() {
   const [healthStatus, setHealthStatus] = useState(null);
 
   useEffect(() => {
-    fetch('allcleanlaundry-production.up.railway.app:8080/healthcheck')
+    fetch('allcleanlaundry-production.up.railway.app/healthcheck')
       .then(response => response.json())
       .then(data => setHealthStatus(data))
       .catch(error => console.error('Error fetching healthcheck:', error));
