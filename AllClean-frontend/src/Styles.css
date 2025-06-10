@@ -65,3 +65,8 @@ body {
     grid-template-rows: 60px 1fr auto;
   }
 }
+
+.sidebar a:hover {
+  background-color: #ddd;
+  border-radius: 4px;
+}
