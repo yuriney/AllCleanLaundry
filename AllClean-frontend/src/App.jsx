@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Layout from './components/Layout';
-import './styles.css';
+import './Styles.css';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState(null);
