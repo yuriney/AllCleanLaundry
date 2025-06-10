@@ -1,4 +1,7 @@
+// src/App.jsx
 import { useEffect, useState } from 'react';
+import Layout from './components/Layout';
+import './styles.css';
 
 function App() {
   const [healthStatus, setHealthStatus] = useState(null);
@@ -11,15 +14,27 @@ function App() {
   }, []);
 
   return (
-    <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <h1>Laundry Service Frontend is running 🚀</h1>
-      <h2>Backend Status:</h2>
-      {healthStatus ? (
-        <pre>{JSON.stringify(healthStatus, null, 2)}</pre>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
+    <Layout>
+      <div style={{ textAlign: 'center' }}>
+        <div style={{
+          borderRadius: '10px',
+          backgroundColor: '#C5D8D1',
+          padding: '1rem',
+          marginBottom: '1rem'
+        }}>
+          <h1>Laundry Service Frontend is running 🚀</h1>
+          <h2>Backend Status:</h2>
+        </div>
+
+        {healthStatus ? (
+          <pre style={{ fontFamily: 'monospace' }}>
+            {JSON.stringify(healthStatus, null, 2)}
+          </pre>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    </Layout>
   );
 }
 
